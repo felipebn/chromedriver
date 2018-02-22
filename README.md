@@ -7,4 +7,4 @@ This image was built to support testing sites with self-signed certificates in a
 
 ## Usage
 
-docker run -p 9515:9515 felipebn/chromedriver
+`docker run -p 9515:9515 felipebn/chromedriver`
