@@ -2,8 +2,6 @@ FROM ubuntu:16.04
 
 ENV CHROMIUM_DRIVER_VERSION 2.35
 
-EXPOSE 9515
-
 RUN apt-get update && apt-get install -y wget unzip
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -21,4 +19,9 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/$CH
     && rm /tmp/chromedriver.zip \
     && chmod ugo+rx /usr/bin/chromedriver
 
-CMD ["chromedriver", "--whitelisted-ips="]
+EXPOSE 9515
+EXPOSE 9222
+
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
