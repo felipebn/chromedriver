@@ -1,5 +1,6 @@
 # chromedriver
-Docker container to enable browser testing with ChromeDriver 2.35+ and Chrome Beta.
+
+Docker container to enable browser testing with ChromeDriver 2.35+ and Chrome Beta 65+.
 
 ## Motivation
 
@@ -8,3 +9,13 @@ This image was built to support testing sites with self-signed certificates in a
 ## Usage
 
 `docker run -p 9515:9515 felipebn/chromedriver`
+
+## Compose Usage
+
+```
+services:
+    chromedriver:
+        image: felipebn/chromedriver:latest
+        ports:
+            - 9515:9515
+```
