@@ -22,6 +22,8 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/$CH
 EXPOSE 9515
 EXPOSE 9222
 
+ENV WINDOW_SIZE "1280,720"
+
 COPY ./docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]

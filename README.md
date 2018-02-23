@@ -12,7 +12,11 @@ This image exposes `9515` where `chromedriver` is listening to connections.
 
 This image also exposes `9222` where you are able to connect via `http://localhost:9222` to Chrome Remote Debugger.
 
-### Using with Nightwatch.js
+## Options
+
+You can change the window size by setting the environment variable `WINDOW_SIZE`, the default value is `1270x720`.
+
+## Usage with Nightwatch.js
 
 The configuration below can be used as a starter for using this image with Nightwatch.js. We do not pass chrome arguments as they are bundled into the container so we can fix the port for remote debugging.
 

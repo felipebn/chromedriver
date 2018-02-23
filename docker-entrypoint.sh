@@ -25,6 +25,7 @@
     --remote-debugging-address=0.0.0.0 \
     --test-type=webdriver \
     --use-mock-keychain \
-    --user-data-dir=/tmp/.org.chromium.Chromium.60dQ4a data:, &
+    --window-size="$WINDOW_SIZE" \
+    data:, &
 
 chromedriver --whitelisted-ips=
